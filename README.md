@@ -40,3 +40,6 @@ docker run --rm -p 5000:5000 \
   -e CITY="Boca Raton" -e COUNTRY="US" -e UNITS="imperial" \
   daily-dashboard:latest
 # open http://localhost:5000
+
+### Roadmap
+See [ROADMAP.md](ROADMAP.md) for planned features and future ideas.
