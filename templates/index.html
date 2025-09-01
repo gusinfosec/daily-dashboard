@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily Dashboard</title>
+  <style>
+    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#38bdf8; }
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#0b1020,#0f172a);
+      color:var(--text);font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    .wrap{max-width:900px;margin:40px auto;padding:16px}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+    h1{font-size:1.4rem;margin:0} .time{color:var(--muted);font-size:0.95rem}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:800px){.grid{grid-template-columns:2fr 1fr}}
+    .card{background:rgba(17,24,39,0.8);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,0.25)}
+    .title{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+    .title span{color:var(--accent)}
+    .current{display:flex;align-items:center;gap:16px;margin:8px 0 12px}
+    .current .temp{font-size:3.2rem;font-weight:700}
+    .muted{color:var(--muted)}
+    .row{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);padding:6px 10px;border-radius:999px;font-size:0.85rem}
+    .hourly,.daily{display:flex;gap:10px;overflow:auto;padding-bottom:2px}
+    .slot{min-width:92px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:10px;text-align:center}
+    .slot .t{font-size:1.1rem;font-weight:600}
+    .q{font-size:1.1rem;line-height:1.5}
+    button{background:var(--accent);color:#071521;border:none;border-radius:10px;padding:8px 12px;font-weight:600;cursor:pointer}
+    .bar{display:flex;gap:8px;align-items:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Daily Dashboard</h1>
+      <div class="bar">
+        <div class="time" id="now">—</div>
+        <button id="refresh">Refresh</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div class="card" id="weather">
+        <div class="title"><span>●</span><strong>Weather</strong></div>
+        <div class="current">
+          <img id="w-icon" src="" alt="" width="64" height="64" />
+          <div>
+            <div class="temp"><span id="w-temp">—</span>°</div>
+            <div class="muted" id="w-desc">—</div>
+            <div class="muted" id="w-loc">—</div>
+          </div>
+        </div>
+        <div class="row muted">
+          <div class="chip">Feels like <span id="w-feels">—</span>°</div>
+          <div class="chip">Wind <span id="w-wind">—</span></div>
+          <div class="chip"><span id="w-units">—</span></div>
+        </div>
+        <h3 class="muted">Next 24h</h3>
+        <div class="hourly" id="hourly"></div>
+        <h3 class="muted">Next Days</h3>
+        <div class="daily" id="daily"></div>
+      </div>
+
+      <div class="card">
+        <div class="title"><span>●</span><strong>Quote of the Day</strong></div>
+        <div class="q" id="quote">—</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function load() {
+      const res = await fetch('/api/data');
+      const data = await res.json();
+      document.getElementById('now').textContent = data.now;
+      document.getElementById('quote').textContent = data.quote;
+
+      const w = data.weather;
+      if (w.error) { document.getElementById('w-desc').textContent = w.error; return; }
+
+      document.getElementById('w-temp').textContent = w.current.temp;
+      document.getElementById('w-desc').textContent = w.current.desc;
+      document.getElementById('w-loc').textContent = w.location;
+      document.getElementById('w-feels').textContent = w.current.feels_like;
+      document.getElementById('w-wind').textContent = (w.units === 'imperial' ? `${w.current.wind} mph` : `${w.current.wind} m/s`);
+      document.getElementById('w-units').textContent = (w.units === 'imperial' ? '°F' : '°C');
+
+      const iconUrl = (code) => `https://openweathermap.org/img/wn/${code}@2x.png`;
+      document.getElementById('w-icon').src = iconUrl(w.current.icon);
+
+      const hourly = document.getElementById('hourly');
+      hourly.innerHTML = '';
+      w.hourly.forEach(h => {
+        const div = document.createElement('div');
+        div.className = 'slot';
+        div.innerHTML = `<div class="muted">${h.time}</div><img src="${iconUrl(h.icon)}" width="50" height="50"/><div class="t">${h.temp}°</div><div class="muted" style="font-size:.85rem">${h.desc}</div>`;
+        hourly.appendChild(div);
+      });
+
+      const daily = document.getElementById('daily');
+      daily.innerHTML = '';
+      w.daily.forEach(d => {
+        const div = document.createElement('div');
+        div.className = 'slot';
+        div.innerHTML = `<div class="muted">${d.label}</div><img src="${iconUrl(d.icon)}" width="50" height="50"/><div class="t">${d.hi}° / ${d.lo}°</div>`;
+        daily.appendChild(div);
+      });
+    }
+    document.getElementById('refresh').addEventListener('click', load);
+    load();
+  </script>
+</body>
+</html>

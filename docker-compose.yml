@@ -1,0 +1,11 @@
+services:
+  dashboard:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      OWM_API_KEY: "YOUR_OPENWEATHER_KEY"
+      CITY: "Boca Raton"
+      COUNTRY: "US"
+      UNITS: "imperial" # or "metric"
+    restart: unless-stopped
