@@ -5,6 +5,12 @@ A tiny Flask app in a Docker container that shows:
 - **Quote of the day**
 - **Local time** (per-city, if you apply the timezone patch)
 
+# Daily Dashboard
+
+A simple Dockerized Flask app for weather + quotes.
+
+![Screenshot of Daily Dashboard](docs/screenshot.png)
+
 Runs anywhere Docker/Podman runs. Includes a one-shot `install.sh` that:
 - Builds the image
 - Creates `/etc/daily-dashboard.env`
