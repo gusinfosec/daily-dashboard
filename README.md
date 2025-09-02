@@ -45,3 +45,9 @@ docker run --rm -p 5000:5000 \
 
 ### Roadmap
 See [ROADMAP.md](ROADMAP.md) for planned features and future ideas.
+
+---
+
+## 📝 License
+
+MIT. See `LICENSE` for details.
