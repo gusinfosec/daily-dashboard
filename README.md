@@ -22,9 +22,6 @@
 
 ---
 
-[![GitHub stars](https://img.shields.io/github/stars/gusinfosec/n8n-clamav-sentinel?style=social)](https://github.com/gusinfosec/n8n-clamav-sentinel/stargazers)
-
-
 A tiny Flask app in a Docker container that shows:
 - **Current weather** + next 24h and daily highs/lows (OpenWeather)
 - **Quote of the day**
