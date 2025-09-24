@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/daily-dashboard-logo.png" width="200" alt="Daily Dashboard logo"/>
+  <img src="docs/assets/daily-dashboard-logo.png" width="300" alt="Daily Dashboard logo"/>
 </p>
 
 <h1 align="center">Daily Dashboard</h1>
