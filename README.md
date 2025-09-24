@@ -1,4 +1,18 @@
-# Daily Dashboard (Weather + Quote)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/gusinfosec/daily-dashboard/main/assets/daily-dashboard-banner.png" alt="Daily Dashboard Banner" />
+</p>
+
+<h1 align="center">🗓️ Daily Dashboard</h1>
+
+<p align="center">Flask + Docker app showing real-time weather, quote of the day, and per-city timezones.</p>
+
+<p align="center">
+  <a href="https://ko-fi.com/s/507501790f">
+    <img src="https://raw.githubusercontent.com/gusinfosec/daily-dashboard/main/assets/daily-dashboard-logo-coffee.png" height="60" alt="Buy on Ko-fi" />
+  </a>
+</p>
+
+---
 
 [![GitHub stars](https://img.shields.io/github/stars/gusinfosec/n8n-clamav-sentinel?style=social)](https://github.com/gusinfosec/n8n-clamav-sentinel/stargazers)
 
