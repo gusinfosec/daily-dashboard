@@ -1,23 +1,15 @@
 <p align="center">
-  <img src="assets/branding/daily-dashboard-logo.png" width="200" alt="Daily Dashboard logo" />
+  <img src="docs/assets/daily-dashboard-logo.png" alt="Daily Dashboard Logo" width="220"/>
 </p>
 
 <h1 align="center">📅 Daily Dashboard</h1>
 
-<p align="center"><i>
-Flask + Docker app showing real-time weather, quote of the day, and per-city timezones.
-</i></p>
-
 <p align="center">
-  <a href="https://ko-fi.com/s/507501790f">
-    <img src="https://img.shields.io/badge/Buy%20on-Ko--fi-%23F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Buy on Ko-fi">
-  </a>
+  Flask + Docker app showing real-time weather, quote of the day, and per-city timezones.
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="MIT License"></a>
-  <img src="https://img.shields.io/badge/status-active-brightgreen?style=flat-square" alt="Project Status">
-  <img src="https://img.shields.io/github/stars/gusinfosec/daily-dashboard?style=flat-square" alt="GitHub Stars">
+  <a href="https://ko-fi.com/s/507501790f"><img src="https://img.shields.io/badge/Buy%20on-Ko--fi-orange?style=for-the-badge&logo=ko-fi" alt="Buy on Ko-fi"></a>
 </p>
 
 ---
