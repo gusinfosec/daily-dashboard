@@ -1,23 +1,15 @@
 <p align="center">
-  <img src="docs/assets/daily-dashboard-logo.png" width="300" alt="Daily Dashboard logo"/>
+  <img src="docs/assets/daily-dashboard-logo.png" width="300px" alt="Daily Dashboard Logo" />
 </p>
 
 <h1 align="center">Daily Dashboard</h1>
+<p align="center"><i>Flask app in Docker showing real-time weather, quote of the day, and per-city timezones</i></p>
 
 <p align="center">
-  <i>Flask app in Docker showing real-time weather, quote of the day, and per-city timezones</i>
-</p>
-
-<p align="center">
-  <a href="https://ko-fi.com/s/507501790f">
-    <img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi" />
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="License: MIT" />
-  <img src="https://img.shields.io/badge/status-active-brightgreen" alt="Status: Active" />
-  <img src="https://img.shields.io/github/stars/gusinfosec/daily-dashboard?style=social" alt="GitHub Stars" />
+  <a href="https://ko-fi.com/gusinfosec"><img src="https://img.shields.io/badge/Support%20me%20on-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white" /></a><br/>
+  <img src="https://img.shields.io/badge/license-MIT-green.svg"/>
+  <img src="https://img.shields.io/badge/status-active-brightgreen"/>
+  <img src="https://img.shields.io/github/stars/gusinfosec/daily-dashboard?style=social"/>
 </p>
 
 ---
