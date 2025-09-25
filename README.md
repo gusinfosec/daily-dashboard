@@ -17,7 +17,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square">
   <img src="https://img.shields.io/badge/status-active-brightgreen?style=social">
-  <img src="https://img.shields.io/github/stars/gusinfosec/daily-dashboard?style=flat-square" alt="GitHub Stars">
+  <img src="https://img.shields.io/github/stars/gusinfosec/daily-dashboard?style=social" alt="GitHub Stars">
 </p>
 
 ---
